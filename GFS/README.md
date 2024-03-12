@@ -1,5 +1,17 @@
 # [Google File System](https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf)
 
+## What is GFS?
+GFS is used for Google's data-intensive applications, including web indexing, searching, and crawling.
+
+## What does GFS aim to solve?
+GFS is designed for the following observation and assumption:
+1. Components(machines, disks) often fail.
+2. Multi-GB files are the common case.
+3. Large streaming reads and small random reads.
+4. Many large, sequential writes that append data to files.
+5. Concurrently append to the same file.
+6. High sustained bandwidth is more important.
+
 ## Architecture
 ![GFS Architecture](./GFS%20Architecture.png)
 
@@ -17,6 +29,7 @@ Every client has to interact with the master. If the master started forwarding d
 + Critical data replication.
 + Automatic and efficient data recovery.
 + High aggregate throughput.
++ week consistency
 
 ## Data Flow
 ![](./Data%20Flow.png)
