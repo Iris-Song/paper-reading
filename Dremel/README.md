@@ -39,3 +39,8 @@ Leaf:
 Execution threads (slots)
 
 ![](./Architecture.png)
+
+## What is the key problem that Dremel handles? How is it different or compared to BigQuery? 
+The key problem that Dremel handles is enabling interactive analysis of large-scale datasets stored in Google's infrastructure.
+
+Dremel is the underlying technology for Google's BigQuery service. While Dremel is designed for interactive analysis of large-scale datasets, BigQuery is a fully managed cloud data warehouse service that uses Dremel as its underlying engine. So, essentially, Dremel is the technology that powers BigQuery, providing fast, interactive querying capabilities for massive datasets stored in Google's infrastructure.

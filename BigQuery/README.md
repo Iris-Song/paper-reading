@@ -25,3 +25,18 @@ cons:
 
 ![](./MapReduce%20and%20BigQuery%20Comparison1.png)
 ![](./MapReduce%20and%20BigQuery%20Comparison2.png)
+
+## Explain the key components in BigQuery architecture. What is the main problem that BigQuery addresses?
+The key components in BigQuery architecture include:
+
+1. **Storage**: BigQuery stores data in a highly scalable and distributed manner, utilizing Google Cloud Storage (GCS) as its underlying storage layer. Data is stored in a columnar format, which enables efficient querying and processing.
+
+2. **Dremel Query Engine**: The Dremel query engine is the heart of BigQuery. It is responsible for processing SQL-like queries in a massively parallel and distributed manner across multiple nodes. This engine allows for interactive analysis of large-scale datasets, providing fast query results even on petabyte-scale data.
+
+3. **Execution Engine**: BigQuery's execution engine manages the distributed execution of queries across multiple nodes. It optimizes query execution for performance and efficiency, coordinating tasks such as data retrieval, processing, and aggregation.
+
+4. **Query Interface**: BigQuery provides various interfaces for users to interact with the service, including a web-based console, command-line tools, and client libraries. These interfaces allow users to submit queries, monitor job progress, and retrieve results.
+
+5. **Integration with Other Google Cloud Services**: BigQuery integrates seamlessly with other Google Cloud services, such as Dataflow for data processing, Dataprep for data preparation, and Data Studio for visualization. This integration enables end-to-end data analytics workflows within the Google Cloud ecosystem.
+
+The main problem that BigQuery addresses is enabling fast and interactive analysis of large-scale datasets. Traditional data warehouses often struggle to handle massive volumes of data or require significant infrastructure investments to scale effectively. BigQuery, on the other hand, leverages Google's infrastructure and Dremel query engine to provide a fully managed and highly scalable solution for querying and analyzing data at any scale. It allows users to run complex SQL-like queries on vast datasets quickly, without the need for extensive setup or management of infrastructure.
