@@ -3,6 +3,14 @@ map (k1,v1) &rarr; list(k2,v2)
 
 reduce (k2,list(v2)) &rarr; list(v2)
 
+combine (k’, v’) → <k’, v’>*
+- Mini-reducers that run in memory after the map phase
+- Used as an optimization to reduce network traffic
+  
+partition (k’, number of partitions) → partition for k’
+- Often a simple hash of the key, e.g., hash(k’) mod n
+- Divides up key space for parallel reduce operations
+  
 ## Fault Tolerance
 ### Worker Failure
 Any map tasks completed by the worker are reset back to their initial idle state, and therefore become eligible for scheduling on other workers. Similarly, any map task or reduce task in progress on a failed worker is also reset to idle and becomes eligible for rescheduling.
@@ -27,7 +35,7 @@ Fold the functionality of the combiner into the mapper by preserving state acros
 **Disadvantages**
 - Explicit memory management required – if associative array grows too big, it will not fit in memory!
 - Preserving state across breaks the functional underpinnings of mapreduce leading to potential order-dependent bugs
-•-Algorithmic behavior may depend on the order in which input key-value pairs are encountered
+- Algorithmic behavior may depend on the order in which input key-value pairs are encountered
 
 ### partitioner
 What is the role of the partitioner function in Map Reduce? What is its significance?
